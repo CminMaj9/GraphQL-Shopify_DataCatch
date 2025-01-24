@@ -1,0 +1,27 @@
+spring:
+  application:
+    name = GraphQL-Shopify
+  # 数据库配置
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/shopify?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+    username: joker
+    password: Iamajoker666!
+  # JPA配置
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+    # 自动更新数据库结构（开发环境可以用此设置，生产环境建议用 "validate" 或 "none"）
+    hibernate:
+      ddl-auto: update
+    # 显示 SQL
+    show-sql: true
+    properties:
+        hibernate:
+            format_sql: true
+
+
+# Shopify API Configuration
+shopify:
+  api:
+    url: "https://08cda4-0a.myshopify.com/admin/api/2025-01/graphql.json"
+    token: "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"

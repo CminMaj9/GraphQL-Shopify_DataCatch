@@ -1,0 +1,27 @@
+query CustomerList {
+    customers(
+        first: 250,
+        query: "updated_at:>'$startDate'"
+    ) {
+        nodes {
+            id
+            firstName
+            lastName
+            email
+            phone
+            createdAt
+            updatedAt
+            numberOfOrders
+            state
+            amountSpent {
+                amount
+                currencyCode
+            }
+            note
+            verifiedEmail
+            multipassIdentifier
+            taxExempt
+            tags
+        }
+    }
+}

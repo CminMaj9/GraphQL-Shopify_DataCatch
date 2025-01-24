@@ -1,0 +1,11 @@
+schema: schema.graphql
+documents: '**/*.graphql'
+includes:
+  - 'src/main/resources/graphql/**/*.graphql'
+extensions:
+  endpoints:
+    default:
+      url: 'https://08cda4-0a.myshopify.com/admin/api/2025-01/graphql.json'
+      headers:
+        X-Shopify-Access-Token: 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
+        Content-Type: application/json

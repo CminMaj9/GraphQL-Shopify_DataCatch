@@ -1,0 +1,27 @@
+query GetProductsByDateRange {
+    products(
+        first: 100,
+        query: "(created_at:>='$startDate' AND created_at:<='$endDate' ) OR (updated_at:>='$startDate' AND updated_at:<='$endDate')"
+    ) {
+        edges {
+            node {
+                id
+                title
+                description
+                createdAt
+                updatedAt
+                variants(first: 5) {
+                    edges {
+                        node {
+                            id
+                            title
+                            price
+                            createdAt
+                            updatedAt
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

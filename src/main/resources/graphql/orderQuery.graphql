@@ -1,0 +1,51 @@
+# resources/graphql/orderQuery.graphql
+query {
+    orders(first: 250, query: "created_at:>='$startDate' AND created_at:<='$endDate'") {
+        edges {
+            node {
+                id
+                name
+                createdAt
+                email
+                currencyCode
+                currentTotalPriceSet {
+                    shopMoney {
+                        amount
+                        currencyCode
+                    }
+                }
+                customer {
+                    id
+                    displayName
+                    email
+                }
+                billingAddress {
+                    address1
+                    city
+                    country
+                    zip
+                }
+                shippingAddress {
+                    address1
+                    city
+                    country
+                    zip
+                }
+                lineItems(first: 100) {
+                    edges {
+                        node {
+                            title
+                            quantity
+                            originalUnitPriceSet {
+                                shopMoney {
+                                    amount
+                                    currencyCode
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
