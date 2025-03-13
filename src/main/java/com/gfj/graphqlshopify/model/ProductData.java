@@ -5,8 +5,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.Type;
-
-import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 /**
  * @Author gefangjie
@@ -28,9 +27,10 @@ public class ProductData {
     private String responseData;
 
     @Column(name = "created_at", nullable = false, updatable = false)
-    private Timestamp createdAt;
+    @Temporal(TemporalType.TIMESTAMP)
+    private LocalDateTime createdAt;
 
-    public ProductData(String responseData, Timestamp createdAt) {
+    public ProductData(String responseData, LocalDateTime createdAt) {
         this.responseData = responseData;
         this.createdAt = createdAt;
     }

@@ -29,6 +29,7 @@ class DataSyncSchedulerTest {
     public void syncOrders2() {
         try {
             queryController.queryOrder("orderQuery.graphql");
+            // System.out.println("JVM Timezone: " + System.getProperty("user.timezone"));
         } catch (Exception e) {
             e.printStackTrace();
         }
